@@ -35,5 +35,8 @@ Body
 - NavBar should update as soon as user logs in 
 - Refactor our code to add constants file + create a component folder
 
+- without login you do not access any other functionality
+
+
 
 
