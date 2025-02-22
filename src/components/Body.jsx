@@ -41,7 +41,6 @@ const Body = () => {
     <div>
         <NavBar/>
         <Outlet/> 
-        {/*  any childern route of body will render here */}
         <Footer />
     </div>
   )
