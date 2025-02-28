@@ -36,7 +36,11 @@ Body
 - Refactor our code to add constants file + create a component folder
 
 - without login you do not access any other functionality
-- 56
+- If token is not present, redirect user to login page
+- Logout Feature
+- Get the feed and add the feed in the store
+- build the user card on feed
+
 
 
 
