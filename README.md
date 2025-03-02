@@ -44,6 +44,8 @@ Body
 - Show Toast Message on save of profile
 - New Page - See all my connections
 - New Page - See all my Requests
+- Send/Ignore the user card from the feed
+- Sign up
 
 
 
