@@ -42,8 +42,8 @@ Body
 - build the user card on feed
 - Edit Profile feature
 - Show Toast Message on save of profile
-- See all my connections
-- 30.00
+- New Page - See all my connections
+- New Page - See all my Requests
 
 
 
