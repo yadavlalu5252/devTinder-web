@@ -34,7 +34,7 @@ const Navbar = () => {
 
       {user && (
         <div className="flex-none gap-2">
-          <div className="form-control">Welcome, {user.data.firstName} </div>
+          <div className="form-control">Welcome, {user.firstName} </div>
 
           <div className="dropdown dropdown-end mx-5 flex">
             <div
@@ -43,7 +43,7 @@ const Navbar = () => {
               className="btn btn-ghost btn-circle avatar"
             >
               <div className="w-10 rounded-full">
-                <img alt="user photo" src={user.data.photoUrl} />
+                <img alt="user photo" src={user.photoUrl} />
               </div>
             </div>
             <ul
@@ -57,7 +57,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/setting">Settings</Link>
+                <Link to="/connections">Connections</Link>
               </li>
               <li>
                 <a to="/logout" onClick={handleLogout}>
