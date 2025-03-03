@@ -47,6 +47,15 @@ Body
 - Send/Ignore the user card from the feed
 - Sign up
 
+# Deployment
+
+- Signup on AWS
+- Launch instance
+- Run on git bash below commands
+- chmod 400 "devTinder-secret.pem"
+- Machine connection key
+- ssh -i "devTinder-secret.pem" ubuntu@ec2-15-207-114-119.ap-south-1.compute.amazonaws.com
+- install nodejs on your aws project which is same as your project version
 
 
 

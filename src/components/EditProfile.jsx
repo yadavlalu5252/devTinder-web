@@ -40,7 +40,7 @@ const EditProfile = ({ user }) => {
         setShowToast(false)
       },3000)
     } catch (error) {
-      setError(error.message);
+      setError(error.response.data);
     }
   };
 
