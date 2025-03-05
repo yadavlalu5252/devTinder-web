@@ -110,3 +110,18 @@ Body
 
 - restart nginx after This
 - modify BASE_URL to /api
+- after that git pull devTinder-web
+- after pull repeat all the procedure of frontend deployment
+    - like npm run build
+    - sudo scp -r dist/* /var/www/html
+
+
+
+# Amazon SES
+- search on aws console SES 
+- In that select IAM then go to users
+- Give username then next
+- set permission to attack policy directly => AmazonSESFullAccess (tick it) then next 
+- User will be created
+
+
