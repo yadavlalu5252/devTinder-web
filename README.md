@@ -125,3 +125,21 @@ Body
 - User will be created
 
 
+## dotenv
+- It will not work on production for because dotenv is hidden for that 
+- sudo nano .env
+- again do the deployement process
+
+# Razorpay Payment Gateway Integration
+- Creating an API for create order in backend
+- Initialize razorpay in utils
+- Added my key and scret in env file
+- Creating order on Razorpay
+- Create Schema
+- savae the order in payments collection
+- make the api dynamic
+
+- for making a Razorpay dialog we need a script in html head
+
+- Setup Razorpay webhook on your live Api
+
