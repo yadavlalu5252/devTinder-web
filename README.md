@@ -54,7 +54,10 @@ Body
 - Run on git bash below commands
 - chmod 400 "devTinder-secret.pem"
 - Machine connection key
+
 - ssh -i "devTinder-secret.pem" ubuntu@ec2-15-207-114-119.ap-south-1.compute.amazonaws.com
+
+
 - install nodejs on your aws project which is same as your project version
 - git clone https://yadavlalu5252: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@github.com/yadavlalu5252/devTinder-web.git
 
@@ -117,12 +120,7 @@ Body
 
 
 
-# Amazon SES
-- search on aws console SES 
-- In that select IAM then go to users
-- Give username then next
-- set permission to attack policy directly => AmazonSESFullAccess (tick it) then next 
-- User will be created
+
 
 
 ## dotenv
@@ -136,10 +134,16 @@ Body
 - Added my key and scret in env file
 - Creating order on Razorpay
 - Create Schema
-- savae the order in payments collection
+- save the order in payments collection
 - make the api dynamic
-
 - for making a Razorpay dialog we need a script in html head
-
 - Setup Razorpay webhook on your live Api
 
+- frontend deployment procedure 
+git pull
+npm run build
+sudo scp -r dist/* /var/www/html
+
+- backend deployment procedure
+git pull
+pm2 restart 0
