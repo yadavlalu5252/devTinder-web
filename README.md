@@ -147,3 +147,16 @@ sudo scp -r dist/* /var/www/html
 - backend deployment procedure
 git pull
 pm2 restart 0
+
+
+
+# Real Time Chat using Websocket (socket.io)
+
+- Socket.IO is a library that enables low-latency, bidirectional and event-based communication between a client and a server.
+
+- Build the ui for the chat window on /chat/:targetUserId
+- npm i socket.io for backend server api
+- npm i socket.io-client for frontend client api
+- Initialise the chat
+- createSocketConnection
+- Listen to events
