@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { BASE_URL } from '../utils/constants'
 import { useDispatch, useSelector } from 'react-redux'
 import { addFeed } from '../utils/feedSlice';
@@ -7,7 +7,7 @@ import UserCard from './UserCard';
 
 const Feed = () => {
   const feed = useSelector((store) => store.feed);
-  console.log(feed);
+  console.log("feed is",feed);
    const dispatch = useDispatch();
 
   const getFeed = async () => {

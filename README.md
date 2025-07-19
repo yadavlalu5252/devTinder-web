@@ -128,6 +128,7 @@ Body
 - sudo nano .env
 - again do the deployement process
 
+
 # Razorpay Payment Gateway Integration
 - Creating an API for create order in backend
 - Initialize razorpay in utils

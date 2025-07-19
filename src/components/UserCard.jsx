@@ -1,16 +1,20 @@
-import React from "react";
+
 import { useDispatch } from "react-redux";
 import { removeUserFromFeed } from "../utils/feedSlice";
 import axios from "axios";
 import { BASE_URL } from "../utils/constants";
+import {FaCheckCircle} from "react-icons/fa";
 
 const UserCard = ({ user }) => {
-  const { _id, firstName, lastName, about, gender, age, photoUrl } = user;
+
+  const { _id, firstName, lastName, about, gender, age, photoUrl, isPremium } = user;
+  console.log("Premium User:", isPremium);
+  console.log("age is: ", age);
   const dispatch = useDispatch();
 
   const handleSendRequest = async (status, userId) => {
     try {
-        await axios.post(
+      await axios.post(
         BASE_URL + "/request/sent/" + status + "/" + userId,
         {},
         { withCredentials: true }
@@ -33,7 +37,12 @@ const UserCard = ({ user }) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{firstName + " " + lastName}</h2>
+        <h2 className="card-title flex items-center">
+          {firstName + " " + lastName}
+          {isPremium && (
+            <FaCheckCircle className="text-blue-500 ml-1" title="Verified" />
+          )}
+        </h2>
         {age && gender && <p>{age + " , " + gender}</p>}
         <p>{about}</p>
         <div className="card-actions justify-center my-4">

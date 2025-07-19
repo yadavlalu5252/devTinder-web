@@ -1,9 +1,13 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { BASE_URL } from "../utils/constants";
+import { useDispatch, useSelector } from "react-redux";
+import { setPremium } from "../utils/premiumSlice";
 
 const Premium = () => {
-  const [isUserPremium, setIsUserPremium] = useState(false);
+  // const [isUserPremium, setIsUserPremium] = useState(false);
+  const dispatch = useDispatch();
+  const isUserPremium = useSelector((store)=> store.premium.isPremiumUser);
   
   useEffect(() => {
     verifyPremiumUser();
@@ -14,7 +18,8 @@ const Premium = () => {
       withCredentials: true,
     });
     if (res.data.isPremium) {
-      setIsUserPremium(true);
+      // setIsUserPremium(true);
+      dispatch(setPremium(res.data.isPremium))
     }
   };
 
