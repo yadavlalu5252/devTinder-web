@@ -12,6 +12,7 @@ const Login = () => {
   const [lastName, setLastName] = useState("");
   const [isLoginForm, setIsLoginForm] = useState(true);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -54,6 +55,12 @@ const Login = () => {
           <h2 className="card-title justify-center">
             {isLoginForm ? "Login" : "SignUp"}
           </h2>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              isLoginForm ? handleLogin() : handleSignup();
+            }}
+          >
           <div>
             <div className="form-control w-full max-w-xs">
               {!isLoginForm && (
@@ -91,14 +98,25 @@ const Login = () => {
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
-              <input
-                type="password"
-                value={password}
-                className="input input-bordered w-full max-w-xs"
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  value={password}
+                  className="input input-bordered w-full max-w-xs pr-10"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <button
+                  type="button"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 text-sm"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                  tabIndex={-1}
+                >
+                  {showPassword ? "Hide" : "Show"}
+                </button>
+              </div>
             </div>
           </div>
+          
           <p className="text-red-500">{error}</p>
           <div className="card-actions justify-center m-2">
             <button
@@ -108,6 +126,7 @@ const Login = () => {
               {isLoginForm ? "Login" : "Sign Up"}
             </button>
           </div>
+          </form>
           <p
             className="m-auto cursor-pointer py-2"
             onClick={() => setIsLoginForm((value) => !value)}
