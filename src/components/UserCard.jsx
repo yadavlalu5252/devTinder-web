@@ -8,8 +8,8 @@ import {FaCheckCircle} from "react-icons/fa";
 const UserCard = ({ user }) => {
 
   const { _id, firstName, lastName, about, gender, age, photoUrl, isPremium } = user;
-  console.log("Premium User:", isPremium);
-  console.log("age is: ", age);
+  // console.log("Premium User:", isPremium);
+  // console.log("age is: ", age);
   const dispatch = useDispatch();
 
   const handleSendRequest = async (status, userId) => {

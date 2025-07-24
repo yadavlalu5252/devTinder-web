@@ -13,13 +13,13 @@ const Chat = () => {
   const user = useSelector((store) => store.user);
   const userId = user?._id;
   const onlineStatus = useOnlineStatus();
-  console.log("online status is: " + onlineStatus);
+  // console.log("online status is: " + onlineStatus);
 
   const fetchChatMessages = async () => {
     const chat = await axios.get(BASE_URL + "/chat/" + targetUserId, {
       withCredentials: true,
     });
-    console.log(chat.data.messages);
+    // console.log(chat.data.messages);
 
     const chatMessages = chat?.data?.messages.map((msg) => {
       const { senderId, text } = msg;
@@ -51,7 +51,7 @@ const Chat = () => {
     });
 
     socket.on("messageReceived", ({ firstName, lastName, text }) => {
-      console.log(firstName + " :" + "text");
+      // console.log(firstName + " :" + "text");
       setMessages((messages) => [...messages, { firstName, lastName, text }]);
     });
 
