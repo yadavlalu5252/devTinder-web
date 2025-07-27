@@ -90,7 +90,7 @@ Body
 - pm2 logs (For checking the process is running online or not)
 - pm2 flush, pm2 stop <name of process>, pm2 delete <name of process>
 
-- pm2 start npm --name "divTinder-backend" --start ( This is rename project name)
+- pm2 start npm --name "devTinder-backend" --start ( This is rename project name)
 
 
  frontend = http://15.207.114.119/

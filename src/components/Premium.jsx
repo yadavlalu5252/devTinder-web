@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { BASE_URL } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { setPremium } from "../utils/premiumSlice";
@@ -8,6 +8,7 @@ const Premium = () => {
   // const [isUserPremium, setIsUserPremium] = useState(false);
   const dispatch = useDispatch();
   const isUserPremium = useSelector((store)=> store.premium.isPremiumUser);
+  const [membershipType, setMembershipType] = useState("");
   
   useEffect(() => {
     verifyPremiumUser();
@@ -17,9 +18,11 @@ const Premium = () => {
     const res = await axios.get(BASE_URL + "/premium/verify", {
       withCredentials: true,
     });
+    // console.log(res?.data?.membershipType);
     if (res.data.isPremium) {
       // setIsUserPremium(true);
       dispatch(setPremium(res.data.isPremium))
+      setMembershipType(res.data.membershipType); 
     }
   };
 
@@ -54,7 +57,10 @@ const Premium = () => {
   };
 
   return isUserPremium ? (
-    "You're already a premium user"
+    <div className="m-10">
+      <h1 className="flex text-3xl font-bold items-center justify-center">You are a {membershipType.toUpperCase()} Premium User</h1>
+      
+    </div>
   ) : (
     <div className="m-10">
       <div className="flex w-full">
